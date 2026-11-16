@@ -31,9 +31,8 @@ recompiled game, its runtime and native renderer, for PC) and **[gta4-ps5](https
 by elripalda (the PS5 toolchain that brought GTA IV to the PS5 the same way). This repository adds everything that
 makes it a PS5 game.
 
-> **No game files are included.** You need your own copy of the game for the PS2 - the **USA** (SLUS-21590) or the
-> **European** (SLES-54622) release - as an `.iso`: the app reads the game's models, textures, sound, music and missions
-> from it while it runs.
+> **No game files are included.** You need your own copy of the game (PS2, USA, SLUS-21590) as an `.iso`: the app
+> reads the game's models, textures, sound, music and missions from it while it runs.
 
 ## Get it on RecompStore
 
@@ -136,49 +135,44 @@ All captured on a PS5 during one session of play.
 ## What you need
 
 - A jailbroken PS5 that runs homebrew apps from `/data/homebrew/` (etaHEN or similar)
-- Your **own** copy of Grand Theft Auto: Vice City Stories for the **PS2**, **USA (SLUS-21590)** or **Europe
-  (SLES-54622)**, as an `.iso`. No game files are included.
+- Your **own** copy of Grand Theft Auto: Vice City Stories for the **PS2, USA (SLUS-21590)** as an `.iso`. No game
+  files are included.
 - Room for the app and your disc image (a few GB)
 
 ## Which disc works
 
-| Your disc | Its program | The app to install |
-|---|---|---|
-| **USA** PS2 release, **SLUS-21590** | `SLUS_215.90`, SHA-1 `d1832508caf0990c2291c0f255c96a889cce9f88` | `PPSA94010.zip` |
-| **European** PS2 release, **SLES-54622** | `SLES_546.22`, SHA-1 `47048caa4bd2ce8bd5223847b7abe02aa790bc3e` | `PPSA94011.zip` |
+| | Works |
+|---|---|
+| Disc | The **USA PS2** release of Grand Theft Auto: Vice City Stories, **SLUS-21590**, as an `.iso` (any file name) |
+| Its program | `SLUS_215.90`, SHA-1 `d1832508caf0990c2291c0f255c96a889cce9f88` |
 
-The disc goes in as an `.iso` (any file name). Each app is made from its own disc's program, so the USA app needs the
-USA disc and the European app the European disc (each says so if you give it the other). Both can be installed side
-by side. These don't work: other PS2 releases, the PSP version, and a modified or damaged rip.
+These don't work: the European or other PS2 releases (SLES-...), the PSP version, and a modified or damaged rip. The
+app is made from the USA disc's program, so it needs that disc's files.
 
 ## Install by hand
 
-1. Download the app for your disc from [Releases](../../releases) - `PPSA94010.zip` (USA) or `PPSA94011.zip`
-   (Europe) - and copy its folder to `/data/homebrew/` on your PS5.
+1. Download `PPSA94010.zip` from [Releases](../../releases) and copy the `PPSA94010` folder to `/data/homebrew/` on
+   your PS5.
 2. Put your disc image in its `disc` folder:
 
 ```
 /data/homebrew/PPSA94010/disc/Grand Theft Auto - Vice City Stories (USA).iso
-/data/homebrew/PPSA94011/disc/Grand Theft Auto - Vice City Stories (Europe).iso
 ```
 
 3. Start **Grand Theft Auto: Vice City Stories Reloaded** from the home screen (ShadowMountPlus or your homebrew
    launcher adds it).
 
-To update, copy the new folder over the old one. Your disc image, saves and settings stay.
+To update, copy the new `PPSA94010` folder over the old one. Your disc image, saves and settings stay.
 
 ## Known issues
 
 - Occasional short stutters while the world streams in at speed (the game loading new areas).
-- The European version is new: it is the same game recompiled from the European disc, with every feature moved to
-  the European program's addresses, but it has had much less play than the USA version. Languages other than English
-  keep the game's own button words in some prompts.
+- Only the USA PS2 disc is supported.
 - 120 Hz / VRR isn't offered yet; the game runs at 60 FPS on a 60 Hz output.
 
 ## Reporting a problem
 
-Open an [issue](../../issues) with what you were doing, and attach the log: `/data/homebrew/PPSA94010/logs/vcs.log` (`PPSA94011` for
-the European version).
+Open an [issue](../../issues) with what you were doing, and attach the log: `/data/homebrew/PPSA94010/logs/vcs.log`.
 If the game froze or crashed, put a file called `env.txt` holding the line `VCS_LOG_SYNC=1` in the app's folder first,
 so the log keeps everything up to the moment it stopped.
 
@@ -201,7 +195,6 @@ generated/ (C++, stays on your PC)
    ▼
 the PS5 app (PPSA94010)          Vulkan (RADV) on the GPU, libScePad, libSceAudioOut
 ```
-
 
 ## What's next
 
